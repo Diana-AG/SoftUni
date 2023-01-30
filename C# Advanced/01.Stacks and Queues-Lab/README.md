@@ -3,7 +3,7 @@
 Problems for exercises and homework for the ["CSharp Advanced" course @ Software University](https://softuni.bg/courses/csharp-advanced).
 
 You can check your solutions here: <https://judge.softuni.bg/Contests/1445/Stacks-and-Queues-Lab>
-1. # **Working with Stacks**
+I. # **Working with Stacks**
 1. ## **Reverse Strings**
 Write program that:
 
@@ -77,7 +77,7 @@ Print the result back at the terminal.
   - If you find a closing bracket pop the topmost element from the stack. This is the index of the opening bracket.
   - Use the current and the popped index to extract the sub-expression
 
-1. # **Working with Queues**
+II. # **Working with Queues**
 1. ## **Print Even Numbers**
 Write program that:
 
