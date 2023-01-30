@@ -1,5 +1,5 @@
 ﻿
-# **Lab: Stacks and Queues**
+# <p align="center"> Lab: Stacks and Queues</p>
 Problems for exercises and homework for the ["CSharp Advanced" course @ Software University](https://softuni.bg/courses/csharp-advanced).
 
 You can check your solutions here: <https://judge.softuni.bg/Contests/1445/Stacks-and-Queues-Lab>
