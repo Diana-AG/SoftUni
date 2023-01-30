@@ -3,8 +3,9 @@
 Problems for exercises and homework for the ["CSharp Advanced" course @ Software University](https://softuni.bg/courses/csharp-advanced).
 
 You can check your solutions here: <https://judge.softuni.bg/Contests/1445/Stacks-and-Queues-Lab>
-I. # **Working with Stacks**
-1. ## **Reverse Strings**
+# I.Working with Stacks
+
+## 1.Reverse Strings
 Write program that:
 
 - **Reads** an **input string**
