@@ -2,16 +2,32 @@
 {
     using SUS.HTTP;
     using SUS.MvcFramework;
-    using System.IO;
+    using System;
 
     public class StaticFilesController : Controller
     {
         public HttpResponse Favicon(HttpRequest request)
         {
-            var fileBytes = File.ReadAllBytes("wwwroot/favicon.ico");
-            var response = new HttpResponse("image/vnd.microsoft.icon", fileBytes);
+            return this.File("wwwroot/favicon.ico", "image/vnd.microsoft.icon");
+        }
 
-            return response;
+        public HttpResponse BootstrapCss(HttpRequest request)
+        {
+            return this.File("wwwroot/Css/bootstrap.min.css", "text/css");
+        }
+
+        public HttpResponse CustomCss(HttpRequest request)
+        {
+            return this.File("wwwroot/Css/custom.css", "text/css");
+        }
+        public HttpResponse CustomJs(HttpRequest request)
+        {
+            return this.File("wwwroot/Js/custom.js", "text/javascript");
+        }
+
+        public HttpResponse BootstrapJs(HttpRequest request)
+        {
+            return this.File("wwwroot/Js/bootstrap.bundle.min.js", "text/javascript");
         }
     }
 }
