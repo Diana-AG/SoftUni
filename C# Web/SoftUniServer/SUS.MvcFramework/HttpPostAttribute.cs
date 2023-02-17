@@ -1,6 +1,6 @@
 ﻿namespace SUS.MvcFramework
 {
-    using System.Net.Http;
+    using SUS.HTTP;
 
     public class HttpPostAttribute : BaseHttpAttribute
     {

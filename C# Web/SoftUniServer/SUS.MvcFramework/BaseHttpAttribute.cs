@@ -1,7 +1,7 @@
 ﻿namespace SUS.MvcFramework
 {
+    using SUS.HTTP;
     using System;
-    using System.Net.Http;
 
     public abstract class BaseHttpAttribute : Attribute
     {

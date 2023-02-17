@@ -1,6 +1,6 @@
 ﻿namespace SUS.MvcFramework
 {
-    using System.Net.Http;
+    using SUS.HTTP;
 
     public class HttpGetAttribute : BaseHttpAttribute
     {
@@ -12,8 +12,7 @@
         {
             this.Url = url;
         }
-        public override HttpMethod Method => HttpMethod.Get;
 
-        public string Url { get; }
+        public override HttpMethod Method => HttpMethod.Get;
     }
 }
