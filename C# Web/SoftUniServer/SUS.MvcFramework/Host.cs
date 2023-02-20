@@ -26,7 +26,6 @@
             }
 
             IHttpServer server = new HttpServer(routeTable);
-            // Process.Start(@"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe", "http://localhost/");
 
             await server.StartAsync(port);
         }
@@ -63,8 +62,9 @@
 
                     routeTable.Add(new Route(url, httpMethod, (request) =>
                     {
-                        var instance = Activator.CreateInstance(controllerType);
-                        var response = method.Invoke(instance, new object[] { request }) as HttpResponse;
+                        var instance = Activator.CreateInstance(controllerType) as Controller;
+                        instance.Request = request;
+                        var response = method.Invoke(instance, new object[] { }) as HttpResponse;
                         return response;
                     }));
                 }

@@ -5,17 +5,17 @@
 
     public class UsersController : Controller
     {
-        public HttpResponse Login(HttpRequest request)
+        public HttpResponse Login()
         {            
             return this.View();
         }
-        public HttpResponse Register(HttpRequest request)
+        public HttpResponse Register()
         {
             return this.View();
         }
 
         [HttpPost]
-        public HttpResponse DoLogin(HttpRequest arg)
+        public HttpResponse DoLogin()
         {
             //TODO: read data
             //TODO: check user
