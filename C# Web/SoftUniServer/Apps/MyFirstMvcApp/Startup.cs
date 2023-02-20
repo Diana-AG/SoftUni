@@ -1,4 +1,4 @@
-﻿namespace MyFirstMvcApp
+﻿namespace BattleCards
 {
     using BattleCards.Data;
     using Microsoft.EntityFrameworkCore;
