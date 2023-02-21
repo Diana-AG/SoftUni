@@ -1,24 +1,24 @@
 ﻿namespace BattleCards.Controllers
 {
-    using BattleCards.ViewModels;
     using SUS.HTTP;
     using SUS.MvcFramework;
-    using System;
 
     public class HomeController : Controller
     {
         [HttpGet("/")]
         public HttpResponse Index()
         {
-            var viewModel = new IndexViewModel();
-            viewModel.CurrentYear = DateTime.UtcNow.Year;
-            viewModel.Message = "Welcome to Battle Cards";
+            if (this.IsUserSignedIn())
+            {
+                return this.Redirect("/Cards/All");
+            }
 
-            return this.View(viewModel);
+            return this.View();
         }
         
         public HttpResponse About()
         {
+            this.SignIn("didi");
             return this.View();
         }
     }

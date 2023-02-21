@@ -12,11 +12,12 @@
         public static async Task CreateHostAsync(IMvcApplication application, int port = 80)
         {
             List<Route> routeTable = new List<Route>();
+            IServiceCollection serviceCollection = new ServiceCollection();
 
             AutoRegisterStaticFile(routeTable);
             AutoRegisterRoutes(routeTable, application);
 
-            application.ConfigureServices();
+            application.ConfigureServices(serviceCollection);
             application.Configure(routeTable);
 
             Console.WriteLine("All registered routes:");
