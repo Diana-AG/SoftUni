@@ -15,11 +15,5 @@
 
             return this.View();
         }
-        
-        public HttpResponse About()
-        {
-            this.SignIn("didi");
-            return this.View();
-        }
     }
 }

@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BattleCards.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230221105406_AddRoleToUser")]
+    [Migration("20230222080051_AddRoleToUser")]
     partial class AddRoleToUser
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -68,6 +68,9 @@ namespace BattleCards.Migrations
                     b.Property<string>("Password")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Role")
+                        .HasColumnType("int");
 
                     b.Property<string>("Username")
                         .IsRequired()
