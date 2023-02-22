@@ -15,6 +15,7 @@
             this.Headers = new List<Header>();
             this.Cookies = new List<Cookie>();
             this.FormData = new Dictionary<string, string>();
+            this.QueryData = new Dictionary<string, string>();
 
             var lines = requestString.Split(new string[] { HttpConstants.NewLine }, StringSplitOptions.None);
 
@@ -75,22 +76,43 @@
                 this.Session = Sessions[sessionCookie.Value];
             }
 
+            if (this.Path.Contains("?"))
+            {
+                var pathParts = this.Path.Split(new char[] { '?' }, 2);
+                this.Path = pathParts[0];
+                this.QueryString = pathParts[1];
+            }
+            else
+            {
+                this.QueryString = string.Empty;
+            }
+
             this.Body = bodyBuilder.ToString().TrimEnd('\n', '\r');
-            var parameters = this.Body.Split("&", StringSplitOptions.RemoveEmptyEntries);
+
+            SplitParameters(this.Body, this.FormData);
+            SplitParameters(this.QueryString, this.QueryData);
+        }
+
+        private static void SplitParameters(string parametersAsString, IDictionary<string, string> output)
+        {
+
+            var parameters = parametersAsString.Split(new char[] { '&' }, StringSplitOptions.RemoveEmptyEntries);
             foreach (var parameter in parameters)
             {
-                var parameterParts = parameter.Split("=", 2);
+                var parameterParts = parameter.Split(new[] { '=' }, 2);
                 var name = parameterParts[0];
                 var value = WebUtility.UrlDecode(parameterParts[1]);
-                if (!this.FormData.ContainsKey(name))
+                if (!output.ContainsKey(name))
                 {
-                    this.FormData.Add(name, value);
+                    output.Add(name, value);
                 }
             }
         }
 
         public string Path { get; set; }
 
+        public string QueryString { get; set; }
+        
         public HttpMethod Method { get; set; }
 
         public ICollection<Header> Headers { get; set; }
@@ -99,9 +121,10 @@
 
         public IDictionary<string, string> FormData { get; set; }
 
+        public IDictionary<string, string> QueryData { get; set; }
+
         public Dictionary<string, string> Session { get; set; }
 
         public string Body { get; set; }
-
     }
 }
