@@ -8,15 +8,20 @@
 
     public class UsersController : Controller
     {
-        private readonly IUserService usersService;
+        private readonly IUsersService usersService;
 
-        public UsersController(IUserService usersService)
+        public UsersController(IUsersService usersService)
         {
             this.usersService = usersService;
         }
 
         public HttpResponse Login()
         {
+            if (this.IsUserSignedIn())
+            {
+                return this.Redirect("/");
+            }
+
             return this.View();
         }
 
@@ -35,6 +40,11 @@
 
         public HttpResponse Register()
         {
+            if (this.IsUserSignedIn())
+            {
+                return this.Redirect("/");
+            }
+
             return this.View();
         }
 

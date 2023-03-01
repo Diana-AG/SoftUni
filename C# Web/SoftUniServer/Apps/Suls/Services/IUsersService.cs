@@ -1,6 +1,6 @@
 ﻿namespace Suls.Services
 {
-    public interface IUserService
+    public interface IUsersService
     {
         void CreateUser(string username, string email, string password);
 

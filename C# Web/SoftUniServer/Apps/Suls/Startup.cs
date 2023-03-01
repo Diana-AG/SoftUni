@@ -16,9 +16,9 @@
 
         public void ConfigureServices(IServiceCollection serviceCollection)
         {
-            serviceCollection.Add<IUserService, UserService>();
-            serviceCollection.Add<ISubmissionService, SubmissionService>();
-            serviceCollection.Add<IProgramService, ProgramService>();
+            serviceCollection.Add<IUsersService, UsersService>();
+            serviceCollection.Add<ISubmissionsService, SubmissionsService>();
+            serviceCollection.Add<IProblemsService, ProblemsService>();
         }
     }
 }
