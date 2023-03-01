@@ -1,5 +1,7 @@
 ﻿namespace SharedTrip
 {
+    using Microsoft.EntityFrameworkCore;
+    using SharedTrip.Data;
     using SUS.HTTP;
     using SUS.MvcFramework;
     using System.Collections.Generic;
@@ -8,6 +10,7 @@
     {
         public void Configure(List<Route> routeTable)
         {
+            new ApplicationDbContext().Database.Migrate();
         }
 
         public void ConfigureServices(IServiceCollection serviceCollection)
