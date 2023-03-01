@@ -1,7 +1,6 @@
 ﻿namespace Suls.Services
 {
     using Suls.Data;
-    using System;
     using System.Security.Cryptography;
     using System.Text;
 
@@ -23,8 +22,8 @@
                 Password = ComputeHash(password),
             };
 
-            db.Users.Add(user);
-            db.SaveChanges();
+            this.db.Users.Add(user);
+            this.db.SaveChanges();
         }
 
         public string GetUserId(string username, string password)
