@@ -22,13 +22,14 @@
 
 	<ItemGroup>
 		<Folder Include="Data\" />
-		<Folder Include="ViewModels\" />
-		<Folder Include="Services\" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<None Update="Views\Home\Index.cshtml">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Views\Shared\Error.cshtml">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</None>
 		<None Update="Views\Shared\_Layout.cshtml">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>

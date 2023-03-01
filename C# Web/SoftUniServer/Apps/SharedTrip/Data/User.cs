@@ -22,6 +22,9 @@
         public string Password { get; set; }
 
         [Required]
+        public string Email { get; set; }
+
+        [Required]
         public ICollection<UserTrip> UserTrips { get; set; }
     }
 }
