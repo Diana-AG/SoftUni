@@ -3,6 +3,7 @@
     using SharedTrip.Data;
     using SharedTrip.ViewModels.Trips;
     using System.Collections.Generic;
+    using System.Globalization;
     using System.Linq;
 
     public class TripsService : ITripsService
@@ -38,7 +39,7 @@
             {
                 StartPoint = input.StartPoint,
                 EndPoint = input.EndPoint,
-                DepartureTime = input.DepartureTime,
+                DepartureTime = DateTime.ParseExact(input.DepartureTime, "dd.MM.yyyy HH:mm", CultureInfo.InvariantCulture),
                 Seats = input.Seats,
                 Description = input.Description,
                 ImagePath = input.ImagePath,
