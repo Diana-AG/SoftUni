@@ -6,6 +6,7 @@
     using MyWebServer.Controllers;
     using MyWebServer.Results.Views;
     using Microsoft.EntityFrameworkCore;
+    using FootballManager.Services;
 
     public class Startup
     {
@@ -15,8 +16,12 @@
                     .MapStaticFiles()
                     .MapControllers())
                 .WithServices(services => services
-                .Add<FootballManagerDbContext>()
-                .Add<IViewEngine, CompilationViewEngine>())
+                    .Add<FootballManagerDbContext>()
+                    .Add<IValidator, Validator>()
+                    .Add<IPasswordHasher, PasswordHasher>()
+                    .Add<IViewEngine, CompilationViewEngine>()
+                    .Add<IUsersService, UsersService>()
+                    .Add<IPlayerService, PlayerService>())
                 .WithConfiguration<FootballManagerDbContext>(context => context
                     .Database.Migrate())
                 .Start();

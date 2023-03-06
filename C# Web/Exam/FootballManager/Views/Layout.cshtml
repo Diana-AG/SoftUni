@@ -17,7 +17,9 @@
                 <span class="text-white">MENU</span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mr-auto">
+                @if(User == null)
+                {
+                    <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
                         <a class="nav-link text-white active h5" href="/">Home</a>
                     </li>
@@ -28,7 +30,10 @@
                         <a class="nav-link text-white active h5" href="/Users/Register">Register</a>
                     </li>
                 </ul>
-                <ul class="navbar-nav mr-auto">
+                }
+                @if(User != null)
+                {
+                    <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
                         <a class="nav-link text-white active h5" href="/">Home</a>
                     </li>
@@ -42,6 +47,7 @@
                         <a class="nav-link text-danger active h5" href="/Users/Logout">Logout</a>
                     </li>
                 </ul>
+                }
             </div>
         </nav>
     </header>
@@ -52,7 +58,7 @@
     <footer class="bg-dark">
         <div class="container-fluid text-center">
             <small class="footer-background text-white">
-                CopyRight &copy; Football Manager 2022. All rights reserved.
+                CopyRight &copy; Football Manager @DateTime.Now.Year All rights reserved.
             </small>
         </div>
     </footer>

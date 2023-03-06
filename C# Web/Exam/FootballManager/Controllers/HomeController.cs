@@ -6,7 +6,12 @@
     {
         public HttpResponse Index()
         {
-            return View();
+            if (this.User.IsAuthenticated)
+            {
+                return this.Redirect("/Players/All");
+            }
+
+            return this.View();
         }
     }
 }
