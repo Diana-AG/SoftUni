@@ -80,11 +80,9 @@ Implement the entities with the **correct datatypes** and their
 ![](./images/media/image2.png)
 
 ### Register Page (logged-out user)
-
 ![](./images/media/image3.png)
 
 ### /Trips/All (logged-in user)
-
 ![](./images/media/image5.png)
 
 **NOTE**: If the user is logged in and tries to go to the home page, the
