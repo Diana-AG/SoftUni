@@ -1,6 +1,6 @@
-# C# Web Basics Exam -- 26 Jun 2021 {#c-web-basics-exam-26-jun-2021 .unnumbered}
+# C# Web Basics Exam - 26 Jun 2021
 
-# Shared Trip {#shared-trip .unnumbered}
+# Shared Trip
 
 Submit your solutions in the **SoftUni judge** system (delete all
 \"**bin**\"/\"**obj**\" folders).
@@ -12,7 +12,7 @@ trips from point to point.
 
 -   Use the **MyWebServer**
 
--   Use **Entity Framework Core -- 5.0.7**
+-   Use **Entity Framework Core - 5.0.7**
 
 The Technological Requirements are **ABSOLUTE**. If you do not follow
 them, you will **NOT** be scored for other Requirements.
@@ -24,89 +24,77 @@ the **Functional Requirements** are.
 
 The **Database** of **SharedTrip** needs to support **3 entities**:
 
-### User  {#user .unnumbered}
+### User
 
--   Has an **Id** -- a **string, Primary Key**
+-   Has an **Id** - a **string, Primary Key**
 
--   Has a **Username** -- a **string** with **min length** **5** and
+-   Has a **Username** - a **string** with **min length** **5** and
     **max length 20** (**required**)
 
--   Has an **Email -** a **string** (**required**)
+-   Has an **Email** - a **string** (**required**)
 
-```{=html}
-<!-- -->
-```
--   Has a **Password --** a **string** with **min length** **6** and
+-   Has a **Password** - a **string** with **min length** **6** and
     **max length 20** **- hashed** in the database (**required**)
 
--   Has **UserTrips** collection -- a **UserTrip** type
+-   Has **UserTrips** collection - a **UserTrip** type
 
-### Trip {#trip .unnumbered}
+### Trip
 
--   Has an **Id** -- a **string, Primary Key**
+-   Has an **Id** - a **string, Primary Key**
 
--   Has a **StartPoint** -- a **string** (**required**)
+-   Has a **StartPoint** - a **string** (**required**)
 
--   Has a **EndPoint** -- a **string** (**required**)
+-   Has a **EndPoint** - a **string** (**required**)
 
--   Has a **DepartureTime** -- a **datetime** (**required**)
+-   Has a **DepartureTime** - a **datetime** (**required**)
 
--   Has a **Seats** -- an **integer** with **min value 2** and **max
+-   Has a **Seats** - an **integer** with **min value 2** and **max
     value 6** (**required**)
 
--   Has a **Description** -- a **string** with **max length 80**
+-   Has a **Description** - a **string** with **max length 80**
     (**required**)
 
--   Has a **ImagePath** -- a **string**
+-   Has a **ImagePath** - a **string**
 
--   Has **UserTrips** collection -- a **UserTrip** type
+-   Has **UserTrips** collection - a **UserTrip** type
 
-### UserTrip {#usertrip .unnumbered}
+### UserTrip
 
--   Has **UserId** -- a **string**
+-   Has **UserId** - a **string**
 
--   Has **User** -- a **User** object
+-   Has **User** - a **User** object
 
--   Has **TripId**-- a **string**
+-   Has **TripId**- a **string**
 
--   Has **Trip** -- a **Trip** object
+-   Has **Trip** - a **Trip** object
 
 Implement the entities with the **correct datatypes** and their
 **relations**.
 
 ## Page Requirements
 
-### Index Page (logged-out user) {#index-page-logged-out-user .unnumbered}
+### Index Page (logged-out user)
+![](./images/media/image1.png)
 
-![](./images/media/image1.png){width="7.246527777777778in"
-height="3.4138888888888888in"}
+### Login Page (logged-out user)
+![](./images/media/image2.png)
 
-### Login Page (logged-out user) {#login-page-logged-out-user .unnumbered}
+### Register Page (logged-out user)
 
-![](./images/media/image2.png){width="7.246527777777778in"
-height="4.134722222222222in"}
+![](./images/media/image3.png)
 
-### Register Page (logged-out user) {#register-page-logged-out-user .unnumbered}
+### /Trips/All (logged-in user)
 
-![](./images/media/image3.png){width="7.246527777777778in"
-height="5.174305555555556in"}
-
-### /Trips/All (logged-in user) {#tripsall-logged-in-user .unnumbered}
-
-![](./images/media/image4.png){width="7.246527777777778in"
-height="2.854861111111111in"}
-
-![](./images/media/image5.png){width="7.246527777777778in"
-height="3.3222222222222224in"}
+![](./images/media/image5.png)
 
 **NOTE**: If the user is logged in and tries to go to the home page, the
 application must redirect him to the **/Trips/All**
 
-### /Trips/Add (logged-in user) ![](./images/media/image6.png){width="7.246527777777778in" height="4.836805555555555in"} {#tripsadd-logged-in-user .unnumbered}
+### /Trips/Add (logged-in user) ![](./images/media/image6.png)
 
-### /Trips/Details?tripId={tripId} (logged-in user) ![](./images/media/image7.png){width="7.246527777777778in" height="7.596527777777778in"}  {#tripsdetailstripidtripid-logged-in-user .unnumbered}
+### /Trips/Details?tripId={tripId} (logged-in user) ![](./images/media/image7.png)
 
-### /Trips/AddUserToTrip?tripId={tripId} (logged-in user) {#tripsaddusertotriptripidtripid-logged-in-user .unnumbered}
+### /Trips/AddUserToTrip?tripId={tripId} (logged-in user)
 
 Adds the current user to the given trip. If everything is successful,
 the user must be redirected to the home page.
@@ -125,7 +113,7 @@ for you to write. Only **bootstrap** and the **given css** are enough.
 
 The functionality of **SharedTrip** Platform is very simple.
 
-### Users {#users .unnumbered}
+### Users
 
 **Guests** can **Register**, **Login** and view the **Index** **Page**.
 
@@ -133,7 +121,7 @@ The functionality of **SharedTrip** Platform is very simple.
 **Page**. From the **Home** **Page,** they can also view **Info** about
 each one of those **Trips** and **Join** in a **Trip**.
 
-### Trips {#trips .unnumbered}
+### Trips
 
 **Trips** can be **Added** by **Users**. All created **Trips** are
 visualized on the **Home** **Page**, each one in its separate
@@ -143,7 +131,7 @@ rectangular element.
 **StartPoint**, **EndPoint, DepartureTime, Seats (the currently free
 Seats), Details** and action **Info**.
 
-**Trips** are visualized on the **Home** **Page** with a button --
+**Trips** are visualized on the **Home** **Page** with a button -
 \[**Info**\].
 
 -   The \[**Info**\] button leads to the **Details** **Page** of the
@@ -154,7 +142,7 @@ displayed. At the bottom, there is one button, which is Join. Upon
 pressing it, the **User** joins the **Trip**. A **User** can join the
 **Trip** just once! You should display the **currently free seats**.
 
-### Redirections {#redirections .unnumbered}
+### Redirections
 
 -   Upon successful **Registration** of a **User**, you should be
     redirected to the **Login** **Page**.
@@ -207,14 +195,14 @@ code into different classes, follow the principles of high-quality code
 
 ## Scoring
 
-### Database Requirements -- 10 points. {#database-requirements-10-points. .unnumbered}
+### Database Requirements - 10 points.
 
-### Template Requirements -- 10 points. {#template-requirements-10-points. .unnumbered}
+### Template Requirements - 10 points.
 
-### Functionality -- 50 points. {#functionality-50-points. .unnumbered}
+### Functionality - 50 points.
 
-### Security -- 10 points. {#security-10-points. .unnumbered}
+### Security - 10 points.
 
-### Code Quality -- 10 points. {#code-quality-10-points. .unnumbered}
+### Code Quality - 10 points.
 
-### Data Validation -- 10 points. {#data-validation-10-points. .unnumbered}
+### Data Validation - 10 points.
