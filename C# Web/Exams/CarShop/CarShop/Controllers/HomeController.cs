@@ -7,6 +7,11 @@
     {
         public HttpResponse Index()
         {
+            if (this.User.IsAuthenticated)
+            {
+                return this.Redirect("/Cars/All");
+            }
+
             return this.View();
         }
     }
